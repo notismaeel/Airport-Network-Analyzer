@@ -8,7 +8,7 @@ Built with **Python, NetworkX, Folium, and Streamlit**, this project demonstrate
 
 ## 🔗 Live Demo
 
-[Streamlit App](https://airport-network-analyzer-f3qxcwd9gnjmfvvgsuyxln.streamlit.app/)
+[Streamlit App](https://airport-network-analyzer-qjhfzytyn599dqesqk9avc.streamlit.app/)
 
 ---
 
