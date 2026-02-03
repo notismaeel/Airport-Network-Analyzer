@@ -1,4 +1,4 @@
-# streamlit_airport_analysis.py
+
 
 import streamlit as st
 import pandas as pd
@@ -7,12 +7,22 @@ import folium
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import time
+import os
 
-# Load data
-df_airlines = pd.read_csv("airlines.csv")
-df_airplanes = pd.read_csv("airplanes.csv")
-df_airports = pd.read_csv("airports.csv")
-df_routes = pd.read_csv("routes.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def load_csv(name):
+    path = os.path.join(BASE_DIR, name)
+    if not os.path.exists(path):
+        st.error(f"Missing file: {name} — expected at {path}")
+        st.stop()
+    return pd.read_csv(path)
+
+df_airlines  = load_csv("airlines.csv")
+df_airplanes = load_csv("airplanes.csv")
+df_airports  = load_csv("airports.csv")
+df_routes    = load_csv("routes.csv")
+
 
 def get_graph():
     return nx.from_pandas_edgelist(df_routes, 'Source airport', 'Destination airport')
@@ -178,4 +188,5 @@ elif option == "Efficiency Analysis":
 
 # Run with:
 # streamlit run streamlit_airport_analysis.py
+
 
