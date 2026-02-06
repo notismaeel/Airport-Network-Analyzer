@@ -159,4 +159,4 @@ streamlit run streamlit_airport_analysis.py
 
 ## 👤 Author
 
-Built by a  Computer Science (AI & ML) graduate**, specializing in real-world data systems, network analysis, and interactive data applications.
+Built by a  Computer Science (AI & ML) Student specializing in real-world data systems, network analysis, and interactive data applications.
